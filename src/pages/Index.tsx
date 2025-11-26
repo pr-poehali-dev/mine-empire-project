@@ -16,7 +16,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "rules", "about", "discord", "team"];
+      const sections = ["home", "rules", "about", "forum", "discord", "team"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -51,6 +51,7 @@ const Index = () => {
                 { id: "home", label: "Главная", icon: "Home" },
                 { id: "rules", label: "Правила", icon: "BookOpen" },
                 { id: "about", label: "О сервере", icon: "Info" },
+                { id: "forum", label: "Форум", icon: "MessagesSquare" },
                 { id: "discord", label: "Discord", icon: "MessageSquare" },
                 { id: "team", label: "Команда", icon: "Users" },
               ].map((item) => (
@@ -84,6 +85,7 @@ const Index = () => {
               { id: "home", label: "Главная", icon: "Home" },
               { id: "rules", label: "Правила", icon: "BookOpen" },
               { id: "about", label: "О сервере", icon: "Info" },
+              { id: "forum", label: "Форум", icon: "MessagesSquare" },
               { id: "discord", label: "Discord", icon: "MessageSquare" },
               { id: "team", label: "Команда", icon: "Users" },
             ].map((item) => (
@@ -280,7 +282,88 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="discord" className="py-20 bg-muted/30">
+      <section id="forum" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="inline-block mb-4">
+              <Icon name="MessagesSquare" size={48} className="text-primary" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black mb-4 text-shadow-pixel">Форум</h2>
+            <p className="text-muted-foreground text-lg">Обсуждай, делись опытом и находи ответы</p>
+          </div>
+          <div className="max-w-5xl mx-auto space-y-4">
+            {[
+              {
+                title: "📢 Новости и объявления",
+                desc: "Последние обновления сервера и важные анонсы",
+                posts: 42,
+                icon: "Megaphone",
+                color: "primary",
+              },
+              {
+                title: "💬 Общение",
+                desc: "Болтай на любые темы с игроками сообщества",
+                posts: 256,
+                icon: "MessageCircle",
+                color: "accent",
+              },
+              {
+                title: "❓ Помощь и вопросы",
+                desc: "Нужна помощь? Спроси здесь!",
+                posts: 189,
+                icon: "HelpCircle",
+                color: "secondary",
+              },
+              {
+                title: "💡 Предложения",
+                desc: "Предлагай идеи по улучшению сервера",
+                posts: 78,
+                icon: "Lightbulb",
+                color: "accent",
+              },
+              {
+                title: "🎮 Игровой процесс",
+                desc: "Обсуждай механики, стратегии и гайды",
+                posts: 134,
+                icon: "Gamepad2",
+                color: "primary",
+              },
+            ].map((category, idx) => (
+              <Card
+                key={idx}
+                className="p-6 pixel-corners hover-scale bg-card border-2 border-border cursor-pointer transition-all hover:border-primary"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className={`w-14 h-14 bg-${category.color} pixel-corners flex items-center justify-center flex-shrink-0`}>
+                      <Icon name={category.icon} size={28} className={`text-${category.color}-foreground`} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-1">{category.title}</h3>
+                      <p className="text-muted-foreground text-sm">{category.desc}</p>
+                    </div>
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <div className="text-2xl font-bold text-primary">{category.posts}</div>
+                    <div className="text-xs text-muted-foreground">тем</div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Button
+              size="lg"
+              className="pixel-corners font-bold text-lg hover-scale"
+            >
+              <Icon name="ExternalLink" size={20} className="mr-2" />
+              Перейти на форум
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="discord" className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-block mb-6 animate-fade-in">
