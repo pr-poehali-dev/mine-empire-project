@@ -135,14 +135,14 @@ const Index = () => {
                 <Icon name="Server" size={24} className="text-accent" />
                 <div className="text-left">
                   <p className="text-xs text-muted-foreground font-semibold">IP СЕРВЕРА:</p>
-                  <p className="text-xl font-bold text-accent font-mono">play.mineempire.ru</p>
+                  <p className="text-lg font-bold text-accent font-mono">Anarchy_Countries_RP.aternos.me:62689</p>
                 </div>
                 <Button
                   size="sm"
                   variant="ghost"
                   className="pixel-corners ml-2"
                   onClick={() => {
-                    navigator.clipboard.writeText('play.mineempire.ru');
+                    navigator.clipboard.writeText('Anarchy_Countries_RP.aternos.me:62689');
                   }}
                 >
                   <Icon name="Copy" size={16} />
