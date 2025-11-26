@@ -127,6 +127,27 @@ const Index = () => {
           <p className="text-lg md:text-xl mb-8 text-muted-foreground max-w-2xl mx-auto">
             Присоединяйся к активному сообществу! Крутые турниры, новые друзья и незабываемые приключения ждут тебя
           </p>
+          <div className="mb-8 flex justify-center">
+            <Card className="px-6 py-3 pixel-corners bg-card/90 backdrop-blur-sm border-2 border-accent inline-block">
+              <div className="flex items-center gap-3">
+                <Icon name="Server" size={24} className="text-accent" />
+                <div className="text-left">
+                  <p className="text-xs text-muted-foreground font-semibold">IP СЕРВЕРА:</p>
+                  <p className="text-xl font-bold text-accent font-mono">play.mineempire.ru</p>
+                </div>
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  className="pixel-corners ml-2"
+                  onClick={() => {
+                    navigator.clipboard.writeText('play.mineempire.ru');
+                  }}
+                >
+                  <Icon name="Copy" size={16} />
+                </Button>
+              </div>
+            </Card>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
